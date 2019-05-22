@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Udemy Course _ Practice JavaScript</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="styles2.css" />
+
+</head>
+
+<body>
+    <div class="commission-calc-container">       
+        <form id="commission-form" class="form-style">
+            <h2 id="commission-form-heading" class="heading">Calculate Your Commission</h2>
+            <label for="commission">
+            <select title="Commission Rate">
+                <option value="Commission Rate">Commission Rate</option>
+                <option value="2%">.02</option>
+                <option value="2.5%">.025</option>
+                <option value="3%">.03</option>
+                <option value="4%">.04</option>
+                <option value="5%">.05</option>
+            </select></label>
+
+            <select title="Choose an Agent">
+                <option value="sandy-bator">Choose An Agent</option>
+                <option value="sandy-bator">Sandra A. Bator</option>
+                <option value="camille-simms">Camille Simms</option>
+                <option value="patrick-meehan">Patrick Meehan</option>
+                <option value="melissa-meehan">Melissa Meehan</option>
+                <option value="john-moise">John Moise</option>
+                <option value="anna-eichen">Anna Eichen</option>
+                <option value="christine-bianchi">Christine Bianchi</option>
+                <option value="cindi-leonard">Cynthia Leonard</option>
+                <option value="eugene-bator">Eugene Bator</option>
+                <option value="Nicole Pagnoni">Nicole Pagnoni</option>
+                <option value="Pamela Volek">Pamela Volek</option>
+            </select>
+            <input type="text" name="property-address" placeholder="Property Address" title="Sale Propery Address">
+            <input type="number" name="purchase-price" placeholder="Purchase Price (no dollar sign or decimals ex 345900)" title="Sale Purchase Price"required>
+        <!-- <input type="number" name="field3" placeholder="Website" /> 
+    <textarea placeholder="Message" onkeyup="adjust_textarea(this)"></textarea> -->
+            <!-- <p class="btn-para">Click below to see your Commission for this Sale!!!! </p> -->
+            <input type="button" class="btn" value="Calculate Commission" />
+        <div class="commission-results-container">
+            <p id="commission-results"> Commission for this Sale:<span class="hide"></span></p>
+        </div>
+        </form>
+    </div>
+ 
+    <div class="loan-calc-container">
+        <form id="loan-form" class="form-style">
+            <h2 id="loan-form-heading" class="heading">Loan Calculator</h2>
+            <label for="loan-amount"><input type="number" name="loan-amount" placeholder="Amount of loan with no decimals (ex. 329000)" onchange="calculate();"> </label>
+            <label for="apr"><input type="number" name="apr" placeholder="Enter APR amount (ex. .25)"></label>
+            <label for="repayment-period"><input type="number" name="repayment-period" id="repayment-period" placeholder="Enter the Repayment Period in Years (ex. 25)"></label>
+            <label for="calculate-button"><input type="button" class="btn" value="Calculate Loan"></label>
+            <div class="loan-results-container">
+                <h2 id="loan-results-heading" class="heading">Loan Results</h2>
+                <table>                
+                    <tr>
+                        <th>Monthly Payment:</th>
+                        <th>Total Payment:</th>
+                        <th>Total Interest:</th>
+                    </tr>
+                    <tr>
+                        <td>$<span class="hide" id="loan-monthly-payment"><em>Monthly Payment</em></span></td>
+                        <td>$<span class="hide" id="loan-total"><em>Total Payment</em></span></td>
+                        <td>$<span class="hide" id="loan-total-interest"><em>Total Interest</em></span></td>
+                    </tr>
+                </table>
+                <div id="lenders-container">
+                    <h2 id="lenders-heading" class="heading">Lenders</h2>
+                    <p class="lenders">Apply for a loan with this fine lenders:</p>
+                    <ul>
+                        <li><a href="www.greentreenmortgage">Green Tree Mortgage</a></li>
+                        <li><a href="www.mortgageadvisors.com">Mortgage Advisors</a></li>
+                        <li><a href="#">Add New Lender</a></li>
+                        <li><a href="#">Add New Lender</a></li>
+                    </ul>
+                </div>
+        </form>
+    </div>
+               
+
+       
+            <!-- <tr>
+                <th> Loan Balance, Cumulative Equity, and Interest Payments
+                <td rowspan="8">
+                    <canvas id="graph" width="400" height="250"></canvas> </td>
+            </tr> -->
+     
+    
+    <script src="app.js"></script>
+    <!--<script src="main.js"></script>-->
+    </body>
+    
+    </html>
