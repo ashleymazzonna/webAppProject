@@ -59,6 +59,12 @@ const calcTotals = (arr, percent) => {
 console.log(calcTotals(commission_May15, .025));
 console.log(`Total number of commissions paid: ${fundsAfterPercent.length}`);
 
+let commissionRate = document.getElementById('commission-rate');
+let purchasePrice = document.getElementById('purchase-price');
+
+let commissionBtn = document.getElementById('commission-btn');
+let commissionResults = document.getElementById('commission-results-hidden');
+
 
 
 

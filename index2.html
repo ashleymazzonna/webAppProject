@@ -15,7 +15,7 @@
         <form id="commission-form" class="form-style">
             <h2 id="commission-form-heading" class="heading">Calculate Your Commission</h2>
             <label for="commission">
-            <select title="Commission Rate">
+            <select title="Commission Rate" id="commission-rate">
                 <option value="Commission Rate">Commission Rate</option>
                 <option value="2%">.02</option>
                 <option value="2.5%">.025</option>
@@ -39,13 +39,13 @@
                 <option value="Pamela Volek">Pamela Volek</option>
             </select>
             <input type="text" name="property-address" placeholder="Property Address" title="Sale Propery Address">
-            <input type="number" name="purchase-price" placeholder="Purchase Price (no dollar sign or decimals ex 345900)" title="Sale Purchase Price"required>
+            <input type="number" name="purchase-price" id="purchase-price" placeholder="Purchase Price (no dollar sign or decimals ex 345900)" title="Sale Purchase Price"required>
         <!-- <input type="number" name="field3" placeholder="Website" /> 
     <textarea placeholder="Message" onkeyup="adjust_textarea(this)"></textarea> -->
             <!-- <p class="btn-para">Click below to see your Commission for this Sale!!!! </p> -->
-            <input type="button" class="btn" value="Calculate Commission" />
+            <input type="button" id="commission-btn" class="btn" value="Calculate Commission" />
         <div class="commission-results-container">
-            <p id="commission-results"> Commission for this Sale:<span class="hide"></span></p>
+            <p id="commission-results"> Commission for this Sale:<span id="commission-results-hidden" class="hide"></span></p>
         </div>
         </form>
     </div>
