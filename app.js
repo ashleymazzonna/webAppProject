@@ -40,33 +40,38 @@ function factorial(n, accumulator) {
 
 
 
-let commissionsByWeek = [3000, 2300, 400, 902, 345];
-let commission_May15 = [300000, 432000, 123000, 356000, 523000, 987500, 567000, 232000, 239000];
-
-let fundsAfterPercent = [];
-let totalCommissionPaid = 0;  
-
-const calcTotals = (arr, percent) => { 
-    
-    for (let i = 0; i < arr.length; i++) {
-        fundsAfterPercent.push(Math.ceil(arr[i] * percent));
-    }
-   totalCommissionPaid = fundsAfterPercent.reduce((total, amount) => total + amount);
-
-    return `Your total sales this week are: ${arr}. Your total commission for each purchase consecutively is: ${fundsAfterPercent}. Total commissions paid by the office are: ${totalCommissionPaid}`;
-    };
-
-console.log(calcTotals(commission_May15, .025));
-console.log(`Total number of commissions paid: ${fundsAfterPercent.length}`);
-
-let commissionRate = document.getElementById('commission-rate');
-let purchasePrice = document.getElementById('purchase-price');
 
 
-let commissionBtn = document.getElementById('commission-btn');
-let commissionResults = document.getElementById('commission-results-hidden');
 
 
+
+
+const loanMonthlyResults = document.getElementById('loan-monthly-payment');
+const loanInterestResults = document.getElementById('loan-total-interest');
+const loanTotalAmount = document.getElementById('loan-total');
+const loanBtn = document.getElementById('loan-btn');
+
+
+
+
+    commissionResults.textContent = Math.ceil(purchasePrice.value * commissionRate.value);
+
+
+        const calcCommission = () => {
+
+           
+            const commissionResults = document.getElementById('commission-results-hidden');
+            const commissionRate = document.getElementById('commission-rate');
+            const purchasePrice = document.getElementById('purchase-price');
+            const commissionBtn = document.getElementById('commission-btn');
+            
+
+            commissionBtn.addEventListener('click', function () {
+                
+            });
+            
+
+            }
 
 
 
