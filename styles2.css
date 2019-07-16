@@ -135,6 +135,12 @@ div.lenders-container
     transform: translateY(-1px); /*-1 is in relation to the initial state not the -3px state) */
     box-shadow: 0 5px 10px rgba(0,0,0,.2);
 }
+.btn,
+.btn:active, 
+.btn:focus, 
+.btn:hover{   
+    outline:none !important;
+}
 div.loan-results-container table, th, tr, td, .btn-para, #loan-results-heading .lenders, #commission-results {
   padding: 3%;
   margin: 3% auto;
@@ -146,9 +152,7 @@ table {
 }
 td { text-decoration: underline; }
 
-/* div {
-  padding: 2%;
-} */
+
 
 li {display: inline;}
 li, ul {
