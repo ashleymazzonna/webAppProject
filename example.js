@@ -1,6 +1,5 @@
 //alert('test');
 var years = [1990, 1965, 1937, 2005, 1998];
-
 function arrayCalc(arr, fn) {
     var arrResult = [];
     for (var i = 0; i < arr.length; i++); {
@@ -9,25 +8,17 @@ function arrayCalc(arr, fn) {
     return arrResult;
 }
 //console.log('hello');
-
 // freeCodeCamp Recursion lesson - a function that repeats itself by calling itself (the function will run 
 // inside of itself )
-
-
 function factorialize(num) {
     if (num === 0) { return 1; }
     return num * factorialize(num - 1);
 }
-
 factorialize(5);
 //console.log(factorialize(10));
-
-
 /************************************** *
- 
 *A tail call is a function call whose return value is used as the callers return value. In the function above return factorial(n — 1, n * accumulator) is a tail call.
 ****************************************************/
-
 function factorial(n, accumulator) {
     // break condition - every recursive function MUST have a break condition or it will 
     //result in an infinite loop
@@ -37,10 +28,6 @@ function factorial(n, accumulator) {
     return factorial(n - 1, n * accumulator)
 }
 //console.log(factorial(5, 1));//==>> 120
-
-
-
-
 let commissionsByWeek = [3000, 2300, 400, 902, 345];
 let commission_May15 = [300000, 432000, 123000, 356000, 523000, 987500, 567000, 232000, 239000];
 
