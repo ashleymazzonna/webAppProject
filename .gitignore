@@ -1,4 +1,6 @@
 DegubSession.code-workspace
 example.js
 manifest.json
-favicon.ico
+browserconfig.xml
+notes.txt
+
