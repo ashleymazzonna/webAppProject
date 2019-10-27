@@ -1,17 +1,24 @@
-/* RESET*/
-* { margin: 0; padding: 0; box-sizing: border-box; }
-
+*,
+*::after,
+*::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+   
+}
+html {
+    font-size: 62.5%;
+}
 body  { 
     background-color: rgb(92, 91, 91);  
 }
-
 div.commission-calc-container .form-style h2, div.loan-calc-container .form-style h2,
 div#lenders-container #lenders-heading h2{
-  background: #252424;
+  background: linear-gradient(to right bottom, #1bd1d1 5%,  #22c4c4 100%);
   text-transform: uppercase;
   font-family: "Open Sans Condensed", sans-serif;
-  color:whitesmoke;
-  font-size: 20px;
+  color:rgb(92, 91, 91);
+  font-size: 2rem;
   font-weight: 200;
   padding: 20px;
   margin-bottom: 3%; 
@@ -20,17 +27,17 @@ div#lenders-container #lenders-heading h2{
 input, select, label, p {
     /* border: 1px solid #bbddbb; */
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-size: 1em;
+    font-size: 1.5em;
     max-width: 100%;  
-    color: black;  
+    color: rgb(252, 247, 247);  
 }
 
 .form-style, table {
   font-family: "Open Sans Condensed", arial, sans;
   width: 60%;
-  background: #ffffff;
-  margin: 2% auto;
-  padding-bottom:2%;
+  background: #3d3d3d;
+  /* margin: 2% auto; */
+  /* padding-bottom:2%; */
   box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.22);
   -moz-box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.22);
   -webkit-box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.22);
@@ -54,7 +61,6 @@ form#loan-form {
 }
 
 .form-style select {cursor: pointer};
-
 .form-style td,
 .form-style th { 
   margin: 20px;
@@ -67,19 +73,15 @@ form#loan-form {
 .form-style textarea,
 .form-style select,
 .form-style option,
-p.btn-para,
 p#commission-results,
 p.lenders,
 div.lenders-container
  {
-  box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
   outline: none;
   display: block;
   width: 90%;
   padding: 7px;
-  margin-left: 2%;
+  margin-left: 3%;
   border: none;
   border-bottom: 1px solid #ddd;
   background: transparent;
@@ -101,30 +103,33 @@ div.lenders-container
   box-shadow: inset 0px 1px 0px 0px #45d6d6;
   background-color: #2cbbbb;
   border: 1px solid #27a0a0;
-  display: inline-block;
+  /* display: inline-block; */
   cursor: pointer;
-  color: #ffffff;
+  color: rgb(92, 91, 91);
   font-family: "Open Sans Condensed", sans-serif;
-  font-size: 16px;
-  padding: 8px 18px;
+  font-size: 1.3rem;
+  padding: .7rem 1rem;
   text-decoration: none;
+  letter-spacing: .2rem;
   text-transform: uppercase;
   border-radius: 25px;
-  margin: 10px 50% 10px 40%;
-
 }
 
-/* .btn {
+.btn {
 	position: relative;
-	top: 0px;
-  left: 30%;
-  margin: 1%;
-} */
+	top: 50%;
+  left: 40%;
+  margin: 3% 0;
+}
+#commission-btn {
+  margin-left: -2rem;
+}
 
 .form-style input[type="button"]:hover,
 .form-style input[type="submit"]:hover {
   background: linear-gradient(to bottom, #34caca 5%, #30c9c9 100%);
   background-color: #34caca;
+  color: white;
 }
 .btn:hover {
     transform: translateY(-3px);
@@ -141,29 +146,46 @@ div.lenders-container
 .btn:hover{   
     outline:none !important;
 }
-div.loan-results-container table, th, tr, td, .btn-para, #loan-results-heading .lenders, #commission-results {
+div.loan-results-container table, th, tr, td, #loan-results-heading .lenders {
   padding: 3%;
   margin: 3% auto;
   text-align: center;
+  color: whitesmoke;
+  font-size: 1.5rem;
 }
 table {
   margin-top: 3%;
   width: 80%;
 }
-td { text-decoration: underline; }
+  td { text-decoration: underline; }
 
+  li {
+    display: inline;
+    padding: 2rem;
+    font-size: 1.2rem;
+  }
 
+  li a {
+    color: #27a0a0;
+    cursor: pointer;
+  }
 
-li {display: inline;}
-li, ul {
-  list-style: none;
-  padding: 3%;
-  margin-left: -2%;
-} 
+  li a:hover {
+    color: white;
+  }
+  ul {
+    list-style: none;
+    margin-left: 2rem;
+    margin-bottom: 2rem;
+  } 
 
 #loan-monthly-payment, #loan-total, #loan-total-interest {
   text-decoration: underline;
-   color: rgba(0, 0, 0, 0.5);
+   color: rgba(223, 219, 219, 0.5);
 }
+
+
+
+
 
 
