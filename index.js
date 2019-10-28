@@ -24,4 +24,8 @@ console.log(`Total number of commissions paid: ${fundsAfterPercent.length}`);
 // alert("The total commission for this sale is : " + result + " Your commission is: "  + result / 2);
 
 
+const findValue = (arr) => {
+   
+    return arr.forEach()
 
+}

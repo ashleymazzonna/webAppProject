@@ -50,13 +50,13 @@ input, select, label, p {
 
 form#commission-form {
   position: absolute;
-  top: 1%;
+  top: 2%;
   left: 5%;
 }
 
 form#loan-form {
   position: absolute;
-  top: 1%;
+  top: 2%;
   left: 55%;
 }
 
@@ -184,8 +184,4 @@ table {
    color: rgba(223, 219, 219, 0.5);
 }
 
-
-
-
-
-
+select option { color: rgb(56, 54, 54); }
