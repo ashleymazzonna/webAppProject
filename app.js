@@ -1,29 +1,65 @@
-// DOM - Commission Calc 
-// const propertyAddress = document.getElementsByName('property-address');
+// Commission Calculator
+const propertyAddress = document.getElementsByName('property-address'); 
+const price= document.getElementById("purchase-price");
+const commRate = document.getElementById("commission-rate");
 
-const purchasePrice = document.getElementById('purchase-price').value;
+const commBtn = document.getElementById("commission-btn"); //Commission Button
 
-const commissionRate = document.getElementById('commission-rate').value;
+// Commission Results 
+const commResults_address = document.getElementById("commission-address--hidden");
+const commResults = document.getElementById("commission-results--hidden");
+
+//Loan Calculator
+const loanAmount = document.getElementById('loan-amount');
+const apr = document.getElementById('apr');
+const loanRepayment = document.getElementById('repayment-period');
+
+//Loan Button 
+const loanBtn = document.getElementById('loan-btn');
+//Loan Results 
+const monthlyPayment = document.getElementById('loan-monthly-payment');
+const loanTotal = document.getElementById('loan-total');
+const loanInterest = document.getElementById('loan-total-interest');
 
 
-const commBtn = document.getElementById('commission-btn');
-
-const commissionResults_address = document.getElementById('commission-address--hidden');
-let commissionResults = document.getElementById('commission-results--hidden');
-
-// let displayAmount, pending, percent;
 
 
-// function setup() {
-//     purchasePrice.focus();
-// }
-// window.addEventListener('load', setup, false);
-// const performCalc = () => {
-//     displayAmount = purchasePrice.value * commissionRate.value;
-//     commissionResults = displayAmount;
+//Commission Calculator click event with callback function
 
-// }
-// commBtn.addEventListener('click', performCalc, false);
+const calculateComm = () => {
+    let pending, percent, value, displayAmount;
+    percent = commRate.value;
+    pending = price.value;
 
-// commissionResults_address.innerHTML = "";
-// commissionResults.innerHTML = "";
+    displayAmount = percent * pending;
+
+    commResults.innerHTML = '$' + displayAmount.toLocaleString(undefined, { maximumFractionDigits: 2 });
+    commResults_address.innerHTML = propertyAddress.value;
+}
+commBtn.addEventListener('click', calculateComm, false);
+document.addEventListener('keypress', function (event) {
+    if (event.keyCode === 13) {
+        calculateComm();
+    } 
+  
+}, false);
+
+loanBtn.addEventListener('click', calculateLoan = () => {
+    let principal, interest, payments, compute, monthly;
+    
+    principal = parseFloat(loanAmount.value);    
+    interest = parseFloat(apr.value) / 100 / 12;
+    payments = parseFloat(loanRepayment.value) * 12;
+    compute = Math.pow(1 + interest, payments);    
+    monthly = (principal * interest) / (compute - 1);
+    
+        
+        monthlyPayment.innerHTML = monthly.toLocaleString(undefined, { maximumFractionDigits: 2 });
+        
+
+        loanTotal.innerHTML = (monthly * payments).toLocaleString(undefined, { maximumFractionDigits: 2 });
+        
+        loanInterest.innerHTML = ((monthly * payments) - principal).toLocaleString(undefined, { maximumFractionDigits: 2 }); 
+    
+
+}, false);

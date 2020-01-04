@@ -23,11 +23,11 @@
             <label for="commission-rate">
                 <select title="Commission Rate" id="commission-rate" required>
                     <option value="Commission Rate">Commission Rate</option>
-                    <option value="2%">.02</option>
-                    <option value="2.5%">.025</option>
-                    <option value="3%">.03</option>
-                    <option value="4%">.04</option>
-                    <option value="5%">.05</option>
+                    <option value=".02">2%</option>
+                    <option value=".025">2.5%</option>
+                    <option value=".03">3%</option>
+                    <option value=".04">4%</option>
+                    <option value=".05">5%</option>
                 </select>
             </label>
 
@@ -38,14 +38,13 @@
             <label for="purchase-price">
                 <input type="number" name="purchase-price" id="purchase-price" placeholder="Purchase Price (no dollar sign or decimals ex 345900)" title="Sale Purchase Price"required>
             </label>
-        <!-- <input type="number" name="field3" placeholder="Website" /> 
-    <textarea placeholder="Message" onkeyup="adjust_textarea(this)"></textarea> -->
-            <!-- <p class="btn-para">Click below to see your Commission for this Sale!!!! </p> -->
+
             <input type="button" id="commission-btn" class="btn" value="Calculate" />
+
         <div class="commission-results-container">
-            <p id="commission-results"> Commission for:
+            <p id="commission-results"> Commission:
                 <span id="commission-address--hidden" class="hide">
-                </span> ~ 
+                </span> 
                 <span id="commission-results--hidden" class="hide"></span></p>
         </div>
         </form>
@@ -58,13 +57,30 @@
             <h2 id="loan-form-heading" class="heading">Loan Calculator</h2>
 
             <label for="loan-amount">
-                <input id="loan-amount" type="number" name="loan-amount" placeholder="Amount of loan with no decimals (ex. 329000)"> </label>
+                <input id="loan-amount" type="number" name="loan-amount" placeholder="Loan Amount ~ $"> </label>
 
             <label for="apr">
-                <input type="number" name="apr" placeholder="Enter APR amount (ex. .25)"></label>
+                <select title="Loan APR" id="apr" required>
+                    <option value="Loan apr">Loan APR</option>
+                    <option value=".01">1%</option>
+                    <option value=".015">1.5%</option>
+                    <option value=".02">2%</option>
+                    <option value=".025">2.5%</option>
+                    <option value=".03">3%</option>
+                    <option value=".035">3.5%</option>
+                    <option value=".04">4%</option>
+                    <option value=".045">4.5%</option>
+                    <option value=".05">5%</option>
+                    <option value=".055">5./5%</option>
+                    <option value=".06">6%</option>
+                    <option value=".065">6.5%</option>
+                    <option value=".07">7%</option>
+                    <option value=".075">7.5%</option>                   
+                </select>
+            </label>
 
             <label for="repayment-period">
-                <input type="number" name="repayment-period" id="repayment-period" placeholder="Enter the Repayment Period in Years (ex. 25)"></label>
+                <input type="number" name="repayment-period" id="repayment-period" placeholder="Loan Repayment ~ Years (ex. 25)"></label>
 
            <input type="button" id="loan-btn" class="btn" value="Calculate">
 
@@ -86,10 +102,10 @@
                     <h2 id="lenders-heading" class="heading">Lenders</h2>
                     <p class="lenders">Apply for a loan with this fine lenders:</p>
                     <ul>
-                        <li><a href="www.greentreenmortgage">Green Tree Mortgage</a></li>
-                        <li><a href="www.mortgageadvisors.com">Mortgage Advisors</a></li>
-                        <li><a href="#">Add New Lender</a></li>
-                        <li><a href="#">Add New Lender</a></li>
+                        <li><a href="#">Lender</a></li>
+                        <li><a href="#">Lender</a></li>
+                        <li><a href="#">Lender</a></li>
+                        <li><a href="#">Lender</a></li>
                     </ul>
                 </div>
         </form>

@@ -146,7 +146,7 @@ div.lenders-container
 .btn:hover{   
     outline:none !important;
 }
-div.loan-results-container table, th, tr, td, #loan-results-heading .lenders {
+div.loan-results-container table, th, tr, td, #loan-results-heading  {
   padding: 3%;
   margin: 3% auto;
   text-align: center;
@@ -161,13 +161,14 @@ table {
 
   li {
     display: inline;
-    padding: 2rem;
+    padding: 1rem;
     font-size: 1.2rem;
   }
 
   li a {
     color: #27a0a0;
     cursor: pointer;
+    padding: 3.5rem;
   }
 
   li a:hover {
@@ -185,3 +186,8 @@ table {
 }
 
 select option { color: rgb(56, 54, 54); }
+
+p.lenders, p#commission-results {
+  font-size: 1.5rem;
+  padding-bottom: 0;
+}
