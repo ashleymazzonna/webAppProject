@@ -16,20 +16,12 @@ const calcTotals = (arr, percent) => {
     return `Your total sales this week are: ${arr}. Your total commission for each purchase consecutively is: ${fundsAfterPercent}. Total commissions paid by the office are: ${numberOfCommissionsPd}.`;
 };
 
-// console.log(calcTotals(commission_May15, .025));
-// console.log(`Total number of commissions paid: ${fundsAfterPercent.length}`);
-
-
 // let purchasePrice = prompt("Enter the total purchase price");
 // let commRate = prompt("What is the total commission rate for this sale?");
 // let result = purchasePrice * commRate;
 // alert("The total commission for this sale is : " + result + " Your commission is: "  + result / 2);
-
-
 // const findValue = (arr) => {
-   
 //     return arr.forEach()
-
 // }
 
 let principal, interest, payments, compute, monthly;

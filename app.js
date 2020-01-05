@@ -36,17 +36,18 @@ const calculateComm = () => {
 }
 // click event for commission calculator
 commBtn.addEventListener('click', calculateComm, false);
+
 // need to differentiate between when enter is 
 //clicked in comm Container vs loan container 
-document.addEventListener('keypress', function (event) {
-    if (event.keyCode === 13) {
-        calculateComm();
-    } 
 
-}, false);
-
-
-loanBtn.addEventListener('click', calculateLoan = () => {
+// document.addEventListener('keypress', (event) => {
+//     if (event.keyCode === 13 && commResults.DOCUMENT_NODE === 9) {
+//         calculateComm();
+//     } else if (event.keyCode && loanRepayment.DOCUMENT_POSITION_CONTAINS === 8) {
+//         calculateLoan();
+//     }
+// }, false);
+    loanBtn.addEventListener('click', calculateLoan = () => {
     let principal, interest, payments, compute, monthly;
     
     principal = parseFloat(loanAmount.value);    
@@ -55,9 +56,8 @@ loanBtn.addEventListener('click', calculateLoan = () => {
     
     compute = Math.pow(1 + interest, payments);    
     monthly = (principal *compute* interest) / (compute - 1);
-    
-        
     monthlyPayment.innerHTML = monthly.toLocaleString(undefined, { maximumFractionDigits: 2 });
+  
     
     loanTotal.innerHTML = (monthly * payments) .toLocaleString(undefined, { maximumFractionDigits: 2 });
     

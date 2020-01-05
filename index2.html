@@ -5,11 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Commission & Mortgage Calculator Web</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="favicon-16x16" href="favicon.ico">
-    <link rel="stylesheet" type="text/css" media="screen" href="styles2.css" />
+    <link rel="favicon-16x16" href="imgs/favicon.ico">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/styles2.css" />
 </head>
 
 <body>
+
 <!-- 
     COMMISSION CALCULATOR -->
     <div class="commission-calc-container">       
@@ -49,6 +50,31 @@
         </div>
         </form>
     </div>
+    <!-- 
+        COMMISSION RECORDS-->
+    <div class="commission-records__container">
+        <h1 class="commission-records__heading">Record of your Commissions</h1>
+        <table class="commission-records__table">
+            <tr>
+                <th class="tableHeading">Address</th>
+                <th class="tableHeading">Commission</th>
+            </tr>
+            <tr>
+                <td>16 Second Ave., Toms River(hardcoded)</td>
+                <td>some data</td>
+            </tr>
+            <tr>
+                <td>some data</td>
+                <td>some data</td>
+            </tr>
+            <tr>
+                <td>some data</td>
+                <td>some data</td>
+            </tr>
+            
+        </table>
+        </div>
+        
 
  <!-- // LOAN CALCULATOR -->
     <div class="loan-calc-container">
@@ -93,9 +119,9 @@
                         <th>Total Interest:</th>
                     </tr>
                     <tr>
-                        <td>$<span class="hide" id="loan-monthly-payment"><em>Monthly Payment</em></span></td>
-                        <td>$<span class="hide" id="loan-total"><em>Total Payment</em></span></td>
-                        <td>$<span class="hide" id="loan-total-interest"><em>Total Interest</em></span></td>
+                        <td class="loan-data">$<span class="hide" id="loan-monthly-payment"><em>0.00</em></span></td>
+                        <td class="loan-data">$<span class="hide" id="loan-total"><em>0.00</em></span></td>
+                        <td class="loan-data">$<span class="hide" id="loan-total-interest"><em>0.00</em></span></td>
                     </tr>
                 </table>
                 <div id="lenders-container">
