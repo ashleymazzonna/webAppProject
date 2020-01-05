@@ -12,8 +12,9 @@ html {
 body  { 
     background-color: rgb(92, 91, 91);  
 }
+
 div.commission-calc-container .form-style h2, div.loan-calc-container .form-style h2,
-div#lenders-container #lenders-heading h2{
+#lenders-heading, h2#loan-results-heading, h1.commission-records__heading{
   background: linear-gradient(to right bottom, #1bd1d1 5%,  #22c4c4 100%);
   text-transform: uppercase;
   font-family: "Open Sans Condensed", sans-serif;
@@ -22,9 +23,10 @@ div#lenders-container #lenders-heading h2{
   font-weight: 200;
   padding: 20px;
   margin-bottom: 3%; 
+  text-align: center;
 }
 
-input, select, label, p {
+input, select, label, p, td {
     /* border: 1px solid #bbddbb; */
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-size: 1.5em;
@@ -32,7 +34,7 @@ input, select, label, p {
     color: rgb(252, 247, 247);  
 }
 
-.form-style, table {
+.form-style,  .commission-records__container, table {
   font-family: "Open Sans Condensed", arial, sans;
   width: 60%;
   background: #3d3d3d;
@@ -43,9 +45,15 @@ input, select, label, p {
   -webkit-box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.22);
 }
 
-.form-style {
+.form-style, .commission-records__container {
   width: 40%;
   float: left;
+}
+
+.commission-records__container {
+  position: absolute;
+  top: 73%;
+  left: 5%;
 }
 
 form#commission-form {
@@ -147,17 +155,35 @@ div.lenders-container
     outline:none !important;
 }
 div.loan-results-container table, th, tr, td, #loan-results-heading  {
-  padding: 3%;
+  padding: 2%;
   margin: 3% auto;
   text-align: center;
   color: whitesmoke;
-  font-size: 1.5rem;
+  font-size: 1.6rem;
 }
-table {
-  margin-top: 3%;
-  width: 80%;
-}
-  td { text-decoration: underline; }
+table { width: 80%; }
+
+  td.loan-data, th.tableHeading { text-decoration: underline; }
+
+  th.tableHeading { 
+    font-size: 1.8rem; 
+    font-weight: 300; 
+    border: 1px solid whitesmoke;
+    text-align: left;
+  }
+  td { font-style: italic;border: .5px solid whitesmoke; }
+
+  table.commission-records__table {
+    width: 100%;
+    border: 1px solid whitesmoke;
+  }
+
+    td.loan-data, th.tableHeading { text-decoration: underline; }
+
+    td:not(.loan-data) {
+      text-align: left;
+    }
+
 
   li {
     display: inline;

@@ -1,5 +1,6 @@
 DegubSession.code-workspace
 snips.js
+.vscode
 manifest.json
 browserconfig.xml
 notes.txt
