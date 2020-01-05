@@ -1,29 +1,65 @@
-// DOM - Commission Calc 
-const propertyAddress = document.getElementsByName('property-address');
+// Commission Calculator
+const propertyAddress = document.getElementsByName('property-address'); 
+const price= document.getElementById("purchase-price");
+const commRate = document.getElementById("commission-rate");
+// Commission Button
+const commBtn = document.getElementById("commission-btn"); //Commission Button
+// Commission Results 
+const commResults_address = document.getElementById("commission-address--hidden");
+const commResults = document.getElementById("commission-results--hidden");
 
-const purchasePrice = document.getElementById('purchase-price');
+//Loan Calculator
+const loanAmount = document.getElementById('loan-amount');
+const apr = document.getElementById('apr');
+const loanRepayment = document.getElementById('repayment-period');
+//Loan Button 
+const loanBtn = document.getElementById('loan-btn');
+//Loan Results 
+const monthlyPayment = document.getElementById('loan-monthly-payment');
+const loanTotal = document.getElementById('loan-total');
+const loanInterest = document.getElementById('loan-total-interest');
 
-const commissionRate = document.getElementById('commission-rate').value;
 
 
-const commBtn = document.getElementById('commission-btn');
 
-let commissionResults_address = document.getElementById('commission-address--hidden');
-let commissionResults = document.getElementById('commission-results--hidden');
+//Commission Calculator click event with callback function
 
-let displayAmount, pending, percent;
+const calculateComm = () => {
+    let pending, percent, value, displayAmount;
+    percent = commRate.value;
+    pending = price.value;
 
+    displayAmount = percent * pending;
 
-function setup() {
-    purchasePrice.focus();
+    commResults.innerHTML = '$' + displayAmount.toLocaleString(undefined, { maximumFractionDigits: 2 });
+    // commResults_address.innerHTML = propertyAddress.value;
 }
-window.addEventListener('load', setup, false);
-// const performCalc = () => {
-//     displayAmount = purchasePrice.value * commissionRate.value;
-//     commissionResults = displayAmount;
+// click event for commission calculator
+commBtn.addEventListener('click', calculateComm, false);
 
-// }
-// commBtn.addEventListener('click', performCalc, false);
+// need to differentiate between when enter is 
+//clicked in comm Container vs loan container 
 
-// commissionResults_address.innerHTML = "";
-// commissionResults.innerHTML = "";
+// document.addEventListener('keypress', (event) => {
+//     if (event.keyCode === 13 && commResults.DOCUMENT_NODE === 9) {
+//         calculateComm();
+//     } else if (event.keyCode && loanRepayment.DOCUMENT_POSITION_CONTAINS === 8) {
+//         calculateLoan();
+//     }
+// }, false);
+    loanBtn.addEventListener('click', calculateLoan = () => {
+    let principal, interest, payments, compute, monthly;
+    
+    principal = parseFloat(loanAmount.value);    
+    interest = parseFloat(apr.value) / 100 / 12;
+    payments = parseFloat(loanRepayment.value) * 12;
+    
+    compute = Math.pow(1 + interest, payments);    
+    monthly = (principal *compute* interest) / (compute - 1);
+    monthlyPayment.innerHTML = monthly.toLocaleString(undefined, { maximumFractionDigits: 2 });
+  
+    
+    loanTotal.innerHTML = (monthly * payments) .toLocaleString(undefined, { maximumFractionDigits: 2 });
+    
+    loanInterest.innerHTML = ((monthly * payments) - principal).toLocaleString(undefined, { maximumFractionDigits: 2 }); 
+}, false);

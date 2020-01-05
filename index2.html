@@ -5,16 +5,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Commission & Mortgage Calculator Web</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="favicon-16x16" href="favicon.ico">
-    <link rel="stylesheet" type="text/css" media="screen" href="styles2.css" />
+    <link rel="favicon-16x16" href="imgs/favicon.ico">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/styles2.css" />
 </head>
 
 <body>
+
 <!-- 
     COMMISSION CALCULATOR -->
     <div class="commission-calc-container">       
         <form method="GET" id="commission-form" class="form-style">
-            <h2 id="commission-form-heading" class="heading">Calculate Your Commission</h2>
+            <h2 id="commission-form-heading" class="heading">Commission Calculator</h2>
             
             <label for="agent-name">
                 <input type="text" name="agent-name" placeholder="Agent Name" title="Agent Name">
@@ -23,11 +24,11 @@
             <label for="commission-rate">
                 <select title="Commission Rate" id="commission-rate" required>
                     <option value="Commission Rate">Commission Rate</option>
-                    <option value="2%">.02</option>
-                    <option value="2.5%">.025</option>
-                    <option value="3%">.03</option>
-                    <option value="4%">.04</option>
-                    <option value="5%">.05</option>
+                    <option value=".02">2%</option>
+                    <option value=".025">2.5%</option>
+                    <option value=".03">3%</option>
+                    <option value=".04">4%</option>
+                    <option value=".05">5%</option>
                 </select>
             </label>
 
@@ -38,18 +39,42 @@
             <label for="purchase-price">
                 <input type="number" name="purchase-price" id="purchase-price" placeholder="Purchase Price (no dollar sign or decimals ex 345900)" title="Sale Purchase Price"required>
             </label>
-        <!-- <input type="number" name="field3" placeholder="Website" /> 
-    <textarea placeholder="Message" onkeyup="adjust_textarea(this)"></textarea> -->
-            <!-- <p class="btn-para">Click below to see your Commission for this Sale!!!! </p> -->
+
             <input type="button" id="commission-btn" class="btn" value="Calculate" />
+
         <div class="commission-results-container">
-            <p id="commission-results"> Commission for:
+            <p id="commission-results"> Commission:
                 <span id="commission-address--hidden" class="hide">
-                </span> ~ 
+                </span> 
                 <span id="commission-results--hidden" class="hide"></span></p>
         </div>
         </form>
     </div>
+    <!-- 
+        COMMISSION RECORDS-->
+    <div class="commission-records__container">
+        <h1 class="commission-records__heading">Record of your Commissions</h1>
+        <table class="commission-records__table">
+            <tr>
+                <th class="tableHeading">Address</th>
+                <th class="tableHeading">Commission</th>
+            </tr>
+            <tr>
+                <td>16 Second Ave., Toms River(hardcoded)</td>
+                <td>some data</td>
+            </tr>
+            <tr>
+                <td>some data</td>
+                <td>some data</td>
+            </tr>
+            <tr>
+                <td>some data</td>
+                <td>some data</td>
+            </tr>
+            
+        </table>
+        </div>
+        
 
  <!-- // LOAN CALCULATOR -->
     <div class="loan-calc-container">
@@ -58,13 +83,30 @@
             <h2 id="loan-form-heading" class="heading">Loan Calculator</h2>
 
             <label for="loan-amount">
-                <input id="loan-amount" type="number" name="loan-amount" placeholder="Amount of loan with no decimals (ex. 329000)"> </label>
+                <input id="loan-amount" type="number" name="loan-amount" placeholder="Loan Amount ~ $"> </label>
 
             <label for="apr">
-                <input type="number" name="apr" placeholder="Enter APR amount (ex. .25)"></label>
+                <select title="Loan APR" id="apr" required>
+                    <option value="Loan apr">Loan APR</option>
+                    <option value="1">1%</option>
+                    <option value="1.5">1.5%</option>
+                    <option value="2">2%</option>
+                    <option value="2.5">2.5%</option>
+                    <option value="3">3%</option>
+                    <option value="3.5">3.5%</option>
+                    <option value="4">4%</option>
+                    <option value="4.5">4.5%</option>
+                    <option value="5">5%</option>
+                    <option value="5.5">5.5%</option>
+                    <option value="6">6%</option>
+                    <option value="6.5">6.5%</option>
+                    <option value="7">7%</option>
+                    <option value="7.5">7.5%</option>                   
+                </select>
+            </label>
 
             <label for="repayment-period">
-                <input type="number" name="repayment-period" id="repayment-period" placeholder="Enter the Repayment Period in Years (ex. 25)"></label>
+                <input type="number" name="repayment-period" id="repayment-period" placeholder="Loan Repayment ~ Years (ex. 25)"></label>
 
            <input type="button" id="loan-btn" class="btn" value="Calculate">
 
@@ -77,19 +119,19 @@
                         <th>Total Interest:</th>
                     </tr>
                     <tr>
-                        <td>$<span class="hide" id="loan-monthly-payment"><em>Monthly Payment</em></span></td>
-                        <td>$<span class="hide" id="loan-total"><em>Total Payment</em></span></td>
-                        <td>$<span class="hide" id="loan-total-interest"><em>Total Interest</em></span></td>
+                        <td class="loan-data">$<span class="hide" id="loan-monthly-payment"><em>0.00</em></span></td>
+                        <td class="loan-data">$<span class="hide" id="loan-total"><em>0.00</em></span></td>
+                        <td class="loan-data">$<span class="hide" id="loan-total-interest"><em>0.00</em></span></td>
                     </tr>
                 </table>
                 <div id="lenders-container">
                     <h2 id="lenders-heading" class="heading">Lenders</h2>
                     <p class="lenders">Apply for a loan with this fine lenders:</p>
                     <ul>
-                        <li><a href="www.greentreenmortgage">Green Tree Mortgage</a></li>
-                        <li><a href="www.mortgageadvisors.com">Mortgage Advisors</a></li>
-                        <li><a href="#">Add New Lender</a></li>
-                        <li><a href="#">Add New Lender</a></li>
+                        <li><a href="#">Lender</a></li>
+                        <li><a href="#">Lender</a></li>
+                        <li><a href="#">Lender</a></li>
+                        <li><a href="#">Lender</a></li>
                     </ul>
                 </div>
         </form>
