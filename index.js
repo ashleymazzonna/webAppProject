@@ -16,8 +16,8 @@ const calcTotals = (arr, percent) => {
     return `Your total sales this week are: ${arr}. Your total commission for each purchase consecutively is: ${fundsAfterPercent}. Total commissions paid by the office are: ${numberOfCommissionsPd}.`;
 };
 
-console.log(calcTotals(commission_May15, .025));
-console.log(`Total number of commissions paid: ${fundsAfterPercent.length}`);
+// console.log(calcTotals(commission_May15, .025));
+// console.log(`Total number of commissions paid: ${fundsAfterPercent.length}`);
 
 
 // let purchasePrice = prompt("Enter the total purchase price");
@@ -31,3 +31,26 @@ console.log(`Total number of commissions paid: ${fundsAfterPercent.length}`);
 //     return arr.forEach()
 
 // }
+
+let principal, interest, payments, compute, monthly;
+
+principal = parseFloat(200000)
+console.log("principal: ", principal);
+
+interest = parseFloat(2.5) / 100 / 12
+console.log("interest: ", interest);
+
+payments = 20 * 12;
+console.log(" payments: ", payments);
+
+compute = Math.pow( 1 + interest, payments );
+console.log(compute);
+
+monthly = (principal * compute * interest) / (compute - 1);
+console.log("Monthly: ", monthly);
+
+console.log(monthly.toLocaleString(undefined, { maximumFractionDigits: 2 }));
+
+console.log((monthly * payments).toLocaleString(undefined, { maximumFractionDigits: 2 }));
+
+console.log( ((monthly * payments) - principal).toLocaleString(undefined, { maximumFractionDigits: 2 })); 
